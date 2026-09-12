@@ -9,6 +9,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
+// Configure email transporter (Gmail)
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
@@ -17,6 +18,7 @@ const transporter = nodemailer.createTransport({
   }
 });
 
+// API: Send OTP
 app.post("/send-otp", (req, res) => {
   const { email } = req.body;
   const otp = sendOTP(email);
@@ -31,10 +33,12 @@ app.post("/send-otp", (req, res) => {
   res.json({ message: "OTP sent successfully" });
 });
 
+// API: Verify OTP
 app.post("/verify-otp", (req, res) => {
   const { email, otp } = req.body;
   const valid = verifyOTP(email, otp);
   res.json({ valid });
 });
 
+// Start server
 app.listen(3000, () => console.log("Server running on http://localhost:3000"));
