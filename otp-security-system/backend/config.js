@@ -5,6 +5,6 @@ module.exports = {
   OTP_EXPIRY: 30,             // OTP expires in 30 seconds
   RESEND_WINDOW: 5,           // Resend same OTP if requested within 5 minutes
   MAX_RESENDS: 3,             // Max resends allowed per OTP
-  EMAIL_USER: "your_email@gmail.com", // Sender email
-  EMAIL_PASS: "your_app_password"     // App password for Gmail
+  EMAIL_USER: "jjmolomo17@gmail.com", // Sender email
+  EMAIL_PASS: "12345@@"     // App password for Gmail
 };
